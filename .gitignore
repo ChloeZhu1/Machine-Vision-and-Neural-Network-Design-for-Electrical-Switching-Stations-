@@ -1,0 +1,154 @@
+```gitignore
+
+# =========================
+# Build directories
+# =========================
+build/
+build-*/
+cmake-build-*/
+out/
+bin/
+lib/
+
+# =========================
+# CMake
+# =========================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# =========================
+# Compiled objects & libs
+# =========================
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.libs
+*.so
+*.so.*
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+*.out
+*.app
+
+# =========================
+# Debug / profiling
+# =========================
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.profraw
+
+# =========================
+# Logs & runtime outputs
+# =========================
+*.log
+logs/
+output/
+results/
+tmp/
+temp/
+
+# =========================
+# OCR intermediate outputs
+# =========================
+*_boxes.jpg
+*_overlay.jpg
+*_annotated.jpg
+*_crops/
+ocr_output/
+detections/
+
+# =========================
+# Large model files (optional)
+# Uncomment if models are large and downloaded separately
+# =========================
+# models/*.pb
+# models/*.onnx
+# models/*.weights
+
+# =========================
+# Dataset / media (optional — keep samples only)
+# =========================
+# assets/raw/
+# assets/videos/
+# *.mp4
+# *.mov
+# *.avi
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =========================
+# Linux
+# =========================
+*~
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+Desktop.ini
+
+# =========================
+# IDE — VSCode
+# =========================
+.vscode/
+
+# =========================
+# IDE — CLion / JetBrains
+# =========================
+.idea/
+*.iml
+
+# =========================
+# IDE — Visual Studio
+# =========================
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+
+# =========================
+# IDE — Xcode
+# =========================
+*.xcworkspace
+*.xcuserstate
+DerivedData/
+
+# =========================
+# Package managers
+# =========================
+conanbuild/
+conan.lock
+conaninfo.txt
+
+# =========================
+# Python helpers (if any scripts)
+# =========================
+__pycache__/
+*.pyc
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+```
