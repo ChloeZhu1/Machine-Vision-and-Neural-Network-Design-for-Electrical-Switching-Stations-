@@ -1,29 +1,30 @@
-# Switchboard Status Recognition (OpenCV + EAST + Tesseract)
+# Machine Vision and Neural Network Design for Electrical Switching Stations (OpenCV + EAST + Tesseract)
 
-A C++ computer-vision project for **switchboard/industrial panel monitoring**:
+A C++ computer-vision OCR for reading switch labels and status texts reliably on real-world **switchboard/industrial panels** in electrical stations:
 
 1) detect **red/green indicator lights** (circle/contour-based segmentation)
 2) detect **text regions** with the EAST scene-text detector (OpenCV DNN)
 3) run **OCR** (Tesseract, Chinese supported) on selected regions
-
-This repo reorganizes the original bachelor-project附件 into a clean, reproducible GitHub layout.
 
 ## Repository layout
 
 ```
 .
 ├── apps/
-│   ├── switch_detection_new/          # Red/green indicator detection demos
+│   ├── switch_status_inspection_image_proc+OCR/        # Red/green indicator detection, and text detection and recognition combined demos
+│   ├── switch_status_inspection_image_proc/    # image processing
 │   ├── text_detection_east/           # EAST text detector (OpenCV DNN)
-│   ├── text_recognition_tesseract/    # Tesseract OCR demo
-│   └── bachelor_project/              # Combined demo (indicator + OCR)
+│   └── text_recognition_tesseract/    # Tesseract OCR design         
 ├── assets/
 │   ├── images/                        # Sample images used in testing
+    ├── download.svg                   # Pipeline diagram
 │   └── videos/                        # Sample videos (ignored by git; use Git LFS if needed)
 ├── models/
 │   └── frozen_east_text_detection.pb  # EAST model
 └── CMakeLists.txt                     # Top-level build
 ```
+## Pipeline
+![Pipeline](assets/download.svg)
 
 ## Dependencies
 
@@ -84,19 +85,3 @@ Run from the repo root (so `models/...` resolves), or pass an explicit `--model`
 ```
 
 > The OCR demos use an interactive ROI selector (`selectROI`)—you draw a box around the text you want recognized.
-
-## Notes / TODOs
-
-- Some original demo code was written with hard-coded local file paths; this repo replaces the defaults with `assets/...` paths.
-- If you want to commit large videos, use **Git LFS** and remove the `*.mp4` ignore rule.
-- Next cleanup targets (recommended):
-  - unify CLI arguments across apps
-  - package indicator detection into a reusable library module
-  - add non-interactive OCR mode (auto-crop via EAST)
-
----
-
-If you want, tell me your preferred repo name and a one-sentence project tagline; I can also generate:
-- a polished `docs/` write-up (method + results)
-- an SVG pipeline diagram for your README
-- GitHub release-ready screenshots / GIFs
