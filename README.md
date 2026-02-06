@@ -1,11 +1,28 @@
 # Machine Vision and Neural Network Design for Electrical Switching Stations (OpenCV + EAST + Tesseract)
 
+## Overview
+
+This project implements an end-to-end computer vision OCR pipeline for reading switchboard and instrument panel text from images and video. It combines OpenCV-based preprocessing with the EAST deep learning text detector to localize text regions, followed by Tesseract OCR for recognition. The system extracts candidate regions, performs ROI refinement, and outputs annotated frames and recognized text. Designed as a practical, modular C++ demo for real-world panel and status-label reading.
+
 A C++ computer-vision OCR for reading switch labels and status texts reliably on real-world **switchboard/industrial panels** in electrical stations:
 
 1) detect **red/green indicator lights** (circle/contour-based segmentation)
 2) detect **text regions** with the EAST scene-text detector (OpenCV DNN)
 3) run **OCR** (Tesseract, Chinese supported) on selected regions
 
+## Features
+
+* C++ implementation with modular pipeline structure
+* Image and video frame support
+* OpenCV preprocessing (resize, normalize, denoise, contrast)
+* EAST deep neural network text detection
+* Non-maximum suppression for box filtering
+* ROI extraction and deskewing
+* Tesseract OCR recognition
+* Annotated output images and frames
+* Debug visualization outputs
+* Clean CMake build configuration
+  
 ## Repository layout
 
 ```
@@ -23,6 +40,7 @@ A C++ computer-vision OCR for reading switch labels and status texts reliably on
 │   └── frozen_east_text_detection.pb  # EAST model
 └── CMakeLists.txt                     # Top-level build
 ```
+
 ## Pipeline
 ![Pipeline](assets/download.svg)
 
@@ -84,4 +102,10 @@ Run from the repo root (so `models/...` resolves), or pass an explicit `--model`
 ./build/apps/bachelor_project/BachelorProject assets/images/T1.JPG
 ```
 
-> The OCR demos use an interactive ROI selector (`selectROI`)—you draw a box around the text you want recognized.
+## Applications
+
+* Industrial panel monitoring
+* Switchboard status reading
+* Instrument label extraction
+* Structured scene text recognition
+* Vision-based inspection workflows
