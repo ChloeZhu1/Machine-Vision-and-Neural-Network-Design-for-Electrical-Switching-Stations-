@@ -26,6 +26,7 @@ A C++ computer-vision OCR for reading switch labels and status texts reliably on
 ## Repository layout
 
 ```
+Machine Vision and Neural Network Design for Electrical Switching Stations (OpenCV + EAST + Tesseract)
 .
 ├── apps/
 │   ├── switch_status_inspection_image_proc+OCR/        # Red/green indicator detection, and text detection and recognition combined demos
@@ -34,12 +35,13 @@ A C++ computer-vision OCR for reading switch labels and status texts reliably on
 │   └── text_recognition_tesseract/    # Tesseract OCR design         
 ├── assets/
 │   ├── images/                        # Sample images used in testing
-    ├── download.svg                   # Pipeline diagram
+│   ├── download.svg                   # Pipeline diagram
 │   └── videos/                        # Sample videos (ignored by git; use Git LFS if needed)
 ├── models/
 │   └── frozen_east_text_detection.pb  # EAST model
-└── CMakeLists.txt                # Top-level build
-├── README
+├── CMakeLists.txt                # Top-level build
+├── .gitignore
+├── README.md
 └── LICENSE
 ```
 
