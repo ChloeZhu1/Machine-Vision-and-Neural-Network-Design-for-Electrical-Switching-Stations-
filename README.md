@@ -38,7 +38,9 @@ A C++ computer-vision OCR for reading switch labels and status texts reliably on
 │   └── videos/                        # Sample videos (ignored by git; use Git LFS if needed)
 ├── models/
 │   └── frozen_east_text_detection.pb  # EAST model
-└── CMakeLists.txt                     # Top-level build
+└── CMakeLists.txt                # Top-level build
+├── README
+└── LICENSE
 ```
 
 ## Pipeline
